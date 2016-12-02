@@ -42,9 +42,14 @@ public class Client  {
         {
             if(writeToserver)
             {
-                writer.WriteLine(dataToSend);
+
                 dataGottenFromServer = reader.ReadLine();
 
+                dataToSend = dataGottenFromServer;
+                /*
+                writer.WriteLine(dataToSend);
+                dataGottenFromServer = reader.ReadLine();
+                */
             
             }
             else

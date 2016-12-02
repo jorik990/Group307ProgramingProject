@@ -15,7 +15,7 @@ public class UnityClient : MonoBehaviour {
     string[] shardData = new string[18];
     public string sharedDataString;
     public static int numberOfPlayers;
-    public static int currentPlayer=1;
+    public static int currentPlayer;
     public static int[] player1PawnPos = new int[4];
     public static int[] player2PawnPos = new int[4];
     public static int[] player3PawnPos = new int[4];
@@ -85,11 +85,13 @@ public class UnityClient : MonoBehaviour {
             Debug.Log(currentPlayer);
             
 
-            if (currentPlayer == TurnManager.thisPlayer && turnManager != null)
+            if ( turnManager != null)
             {
-                Debug.Log("updating");
-                turnManager.newTurn();
                 UpdateSharedInfo();
+                Debug.Log("updating");
+                if(currentPlayer == TurnManager.thisPlayer)
+                turnManager.newTurn();
+               
             }
             timepassed = 0;
         }
@@ -160,7 +162,7 @@ public class UnityClient : MonoBehaviour {
         {
            sharedDataString = server.storedData;
         }
-        else if(client != null)
+        else 
         {
             sharedDataString = client.dataGottenFromServer;
         }
