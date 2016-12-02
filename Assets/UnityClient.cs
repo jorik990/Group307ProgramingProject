@@ -116,6 +116,7 @@ public class UnityClient : MonoBehaviour {
 
         }
 
+        /*
         if (client != null && currentPlayer != TurnManager.thisPlayer && client.writeToserver == true)
         {
             Debug.Log("you are now reading from server");
@@ -134,6 +135,7 @@ public class UnityClient : MonoBehaviour {
             Debug.Log("you are now reading from the clients");
             server.writeToclients = false;
         }
+        */
 
 
     }
@@ -177,7 +179,7 @@ public class UnityClient : MonoBehaviour {
     {
         if (isHost)
         {
-           sharedDataString = server.storedData;
+           sharedDataString = server.dataToSend;
         }
         else 
         {
