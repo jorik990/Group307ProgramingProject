@@ -74,13 +74,14 @@ public class Server  {
 
         while (true)
         {
+            storedData = reader.ReadLine();
+            if (storedData != dataToSend && storedData != "")
+                dataToSend = storedData;
             writer.WriteLine(dataToSend);
 
-            storedData = reader.ReadLine();
+           
 
 
-            if (storedData != dataToSend)
-                dataToSend = storedData;
 
             /*
             if (writeToclients)

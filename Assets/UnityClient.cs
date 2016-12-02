@@ -107,7 +107,7 @@ public class UnityClient : MonoBehaviour {
          SceneManager.LoadScene("gameScene");
 
 
-
+        /*
         if (currentPlayer == TurnManager.thisPlayer && client != null && client.writeToserver == false)
         {
             Debug.Log("you are now writing to server");
@@ -116,14 +116,14 @@ public class UnityClient : MonoBehaviour {
 
         }
 
-        /*
+        
         if (client != null && currentPlayer != TurnManager.thisPlayer && client.writeToserver == true)
         {
             Debug.Log("you are now reading from server");
             client.writeToserver = false;
 
         }
-
+        
         if (server != null && currentPlayer == TurnManager.thisPlayer && server.writeToclients == false)
         {
             Debug.Log("you are now writeing to the clients");
@@ -138,9 +138,10 @@ public class UnityClient : MonoBehaviour {
         */
 
 
+
     }
 
-   
+
 
     public void UpdateSharedInfo()
     {
