@@ -123,13 +123,13 @@ public class UnityClient : MonoBehaviour {
 
         }
 
-        if (server != null && currentPlayer == 1 && server.writeToclients == false)
+        if (server != null && currentPlayer == TurnManager.thisPlayer && server.writeToclients == false)
         {
             Debug.Log("you are now writeing to the clients");
             server.writeToclients = true;
         }
 
-        if (server != null && currentPlayer != 1 && server.writeToclients == true)
+        if (server != null && currentPlayer != TurnManager.thisPlayer && server.writeToclients == true)
         {
             Debug.Log("you are now reading from the clients");
             server.writeToclients = false;

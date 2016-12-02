@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class TurnManager : MonoBehaviour {
-    public static int thisPlayer=1;
+    public static int thisPlayer=0;
 
     public GameObject button;
     public Text player;
