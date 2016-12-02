@@ -108,15 +108,32 @@ public class UnityClient : MonoBehaviour {
 
 
 
-        if (currentPlayer == TurnManager.thisPlayer && client != null)
-            client.writeToserver = true;
-        else if(client != null)
-            client.writeToserver = false;
-        if (server != null && currentPlayer == 1)
-            server.writeToclients = true;
-        else if(server != null)
-            server.writeToclients = false;
+        if (currentPlayer == TurnManager.thisPlayer && client != null && client.writeToserver == false)
+        {
+            Debug.Log("you are now writing to server");
 
+            client.writeToserver = true;
+
+        }
+
+        if (client != null && currentPlayer != TurnManager.thisPlayer && client.writeToserver == true)
+        {
+            Debug.Log("you are now reading from server");
+            client.writeToserver = false;
+
+        }
+
+        if (server != null && currentPlayer == 1 && server.writeToclients == false)
+        {
+            Debug.Log("you are now writeing to the clients");
+            server.writeToclients = true;
+        }
+
+        if (server != null && currentPlayer != 1 && server.writeToclients == true)
+        {
+            Debug.Log("you are now reading from the clients");
+            server.writeToclients = false;
+        }
 
 
     }
