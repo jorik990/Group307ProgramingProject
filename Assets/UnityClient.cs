@@ -89,7 +89,7 @@ public class UnityClient : MonoBehaviour {
             {
                 UpdateSharedInfo();
                 Debug.Log("updating");
-                if(currentPlayer == TurnManager.thisPlayer)
+                if(currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
                 turnManager.newTurn();
                
             }

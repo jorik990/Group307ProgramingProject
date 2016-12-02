@@ -10,6 +10,9 @@ public class TurnManager : MonoBehaviour {
     public Text action;
     public keepTrack keeptrack;
 
+    public static bool turnInProgress = false;
+
+
     UnityClient multiplayerInfo;
 
 
@@ -86,7 +89,7 @@ public class TurnManager : MonoBehaviour {
     public void newTurn()
     {
         Debug.Log("new turn dawned");
-
+        turnInProgress = true;
         button.SetActive(true);
         action.text = "Roll Dice";
     }
@@ -100,6 +103,7 @@ public class TurnManager : MonoBehaviour {
         action.text = "player " + UnityClient.currentPlayer + " turn";
         Debug.Log("New players Turn");
         multiplayerInfo.nextPlayerAndUpdate();
+        turnInProgress = false;
     }
 
     void releasePawn()

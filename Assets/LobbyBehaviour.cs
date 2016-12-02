@@ -9,6 +9,8 @@ public class LobbyBehaviour : MonoBehaviour {
     float passedTime = 0;
     public GameObject button;
 
+    public static bool turnInProgress = false;
+
     UnityClient multiplayerInfo;
 
 	// Use this for initialization
