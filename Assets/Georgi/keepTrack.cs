@@ -81,31 +81,40 @@ public class keepTrack : MonoBehaviour
             for (int i = 0; i < greenPlayersPawns.Length; i++)
             {
                 if (greenPlayersPawns[i].GetComponent<pawn>().isPawnActive == true)
+                {
                     result = true;
-                break;
+                    break;
+                }
             }
         else if (UnityClient.currentPlayer == 2)
             for (int i = 0; i < redPlayersPawns.Length; i++)
             {
                 if (redPlayersPawns[i].GetComponent<pawn>().isPawnActive == true)
+                {
                     result = true;
-                break;
+                    break;
+                }
             }
         else if (UnityClient.currentPlayer == 3)
             for (int i = 0; i < bluePlayersPawns.Length; i++)
             {
                 if (bluePlayersPawns[i].GetComponent<pawn>().isPawnActive == true)
+                {
                     result = true;
-                break;
+                    break;
+                }
             }
         else if (UnityClient.currentPlayer == 4)
             for (int i = 0; i < yellowPlayersPawns.Length; i++)
             {
                 if (yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive == true)
+                {
                     result = true;
-                break;
+                    break;
+                }
             }
 
+        Debug.Log(result);
 
         return result;
 
@@ -120,7 +129,7 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < greenPlayersPawns.Length; i++)
             {
-                if (greenPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
+                if (greenPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && greenPlayersPawns[i].GetComponent<pawn>().isHome == false)
                 {
                     greenPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     greenPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[0, 0], (float)BoardCoordinants[0, 1], 0));
@@ -270,8 +279,10 @@ public class keepTrack : MonoBehaviour
 
             if ((pawn.GetComponent<pawn>().getRealPos() - 40) % 5 == 4)
             {
+                Debug.Log("Pawn is home");
                 pawn.GetComponent<pawn>().isHome = true;
-                pawn.GetComponent<pawn>().isHome = false;
+                pawn.GetComponent<pawn>().isPawnActive = false;
+                
 
             }
         }
