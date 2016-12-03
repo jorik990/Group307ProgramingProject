@@ -21,6 +21,7 @@ This mini-project was created for academic purpose.
 8. Communication protocol between the server and the client
 9. UML class and sequence diagrams
 10. Credits
+
 11. Contact
 
  
@@ -59,7 +60,7 @@ Each client is its own coroutine.
 
 ## UML class and sequence diagrams
 
- 
+ Group307ProgramingProject/Complex Programming HostJoin.png 
  
 ## Configuration
 The host press host and he will enter a lobby, to join his lobby the other players have to type in the host ipv4 address in the input field and then press join. the host can press start game to start the game for everyone in the lobby. When the game is playing only one person is able to roll at a time. If a player rolls six they will get a pawn out, he has 3 tries if he currently have no pawn out, if he do have a pawn out he can choose to move a pawn or get one out when rolling a 6, he will choose which pawn to move or get out with the mouse. The game automatically shift turns when the player have no more options, a small text field under the roll button gives instructions.
