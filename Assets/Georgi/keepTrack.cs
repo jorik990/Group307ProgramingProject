@@ -125,6 +125,7 @@ public class keepTrack : MonoBehaviour
                     greenPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     greenPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[0, 0], (float)BoardCoordinants[0, 1], 0));
                     greenPlayersPawns[i].GetComponent<pawn>().isPawnActive = true;
+                    MovePawn(greenPlayersPawns[i], 0);
                     break;
                 }
 
@@ -134,11 +135,12 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < redPlayersPawns.Length; i++)
             {
-                if (redPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
+                if (redPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !redPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     redPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     redPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[10, 0], (float)BoardCoordinants[10, 1], 0));
                     redPlayersPawns[i].GetComponent<pawn>().isPawnActive = true;
+                    MovePawn(redPlayersPawns[i], 0);
                     break;
                 }
 
@@ -148,11 +150,12 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < bluePlayersPawns.Length; i++)
             {
-                if (bluePlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
+                if (bluePlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !bluePlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     bluePlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     bluePlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[20, 0], (float)BoardCoordinants[20, 1], 0));
                     bluePlayersPawns[i].GetComponent<pawn>().isPawnActive = true;
+                    MovePawn(bluePlayersPawns[i], 0);
                     break;
                 }
 
@@ -162,12 +165,12 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < yellowPlayersPawns.Length; i++)
             {
-                if (yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
+                if (yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !yellowPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     yellowPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     yellowPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[30, 0], (float)BoardCoordinants[30, 1], 0));
                     yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive = true;
-
+                    MovePawn(yellowPlayersPawns[i], 0);
                     break;
                 }
 
