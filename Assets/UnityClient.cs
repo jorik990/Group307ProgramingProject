@@ -210,10 +210,13 @@ public class UnityClient : MonoBehaviour {
         UpdateSharedInfo();
         int temp = currentPlayer;
         temp++;
+      
         if (temp > numberOfPlayers)
             temp = 1;
-            
-       
+        Debug.Log("there is " + numberOfPlayers + " in the game so the turn is set to" + temp);
+
+        shardData[1] = temp + "";
+
         sharedDataString = "";
         for (int i = 0; i < shardData.Length; i++)
         {
