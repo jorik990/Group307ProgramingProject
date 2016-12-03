@@ -53,7 +53,7 @@ public class UnityClient : MonoBehaviour {
 
         Debug.Log("starting server");
        
-        server.StartServer("1,1," + "0,0,0,0," + "0,0,0,0," + "0,0,0,0," + "0,0,0,0"+",0");
+        server.StartServer("1,1," + "70,70,70,70," + "70,70,70,70," + "70,70,70,70," + "70,70,70,70" + ",0");
 
         
     }

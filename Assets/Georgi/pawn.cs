@@ -6,7 +6,7 @@ public class pawn : MonoBehaviour {
     public int number;
 
     public bool isPawnActive = false;
-    int position = 0;
+    int position = 70;
     public int Position
     {
         get {

@@ -92,6 +92,8 @@ public class TurnManager : MonoBehaviour {
         turnInProgress = true;
         button.SetActive(true);
         action.text = "Roll Dice";
+        keeptrack.UpdateAllPawns();
+
     }
     public void endTurn()
     {
