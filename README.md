@@ -8,6 +8,8 @@
 We are group 307 and we decided to create the board game: Ludo. We created two repositories one for the server and one for the client.
 This mini-project was created for academic purpose.
 
+Note that the server and the client are parts of the same unity project, due to intricacies of making the game works and therefore the repository for both is shared.
+
 ## Table of Contents
 
 0. Introduction
@@ -32,6 +34,8 @@ This mini-project was created for academic purpose.
 This application is for entertainment purposes. We made the traditional version that allows up to four players. The game is made in Unity and has the same rules as the traditional version.
 
 ## Contributing
+
+We had problems using github, it is hard to specify who did exactly what as we merged different codes by copy pasting on one computer and the code have been rewritten to so they are able to work togheter. The majority of work is a shared effort after a lot of testing itterations, because we had a very hard time, figuring out the server. 
 
 This mini-project is a Programming Complex of Software System assignment for medialogy students in Aalborg University of Copenhagen. It is assigned for groups of medialogy students of third semester. 
 
