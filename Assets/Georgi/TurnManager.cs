@@ -164,8 +164,11 @@ public class TurnManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        
+
+        if (turnInProgress && !waitingToSelectPawn)
+            button.SetActive(true);
+        if (!turnInProgress)
+            button.SetActive(false);
 
         if (waitingToSelectPawn && selectedPawn !=null)
         {
