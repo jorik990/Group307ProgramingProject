@@ -82,10 +82,8 @@ public class TurnManager : MonoBehaviour {
         clickObject.excludeInactivePawn = false;
         button.SetActive(true);
 
-        if (Dice.diceroll != 6)
             endTurn();
-        else
-            resetTurn();
+       
 
 
     }
@@ -130,12 +128,10 @@ public class TurnManager : MonoBehaviour {
         selectedPawn = null;
         bool temp = keeptrack.IsThereAnActivePawn();
         keeptrack.ReleasePawn();
-        if (temp == false)
+        
+
             endTurn();
-        else {
-            action.text = "Pawn Released, Roll Again";
-            resetTurn();
-        }
+       
 
     }
 

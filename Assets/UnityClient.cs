@@ -82,8 +82,7 @@ public class UnityClient : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (button == null && SceneManager.GetActiveScene().name == "gameScene")
-            button = GameObject.Find("Roll");
+        
 
         if (keeptrack == null && SceneManager.GetActiveScene().name == "gameScene")
             keeptrack = FindObjectOfType<keepTrack>();
@@ -93,8 +92,7 @@ public class UnityClient : MonoBehaviour {
         if(timepassed >= 1)
         {
             Debug.Log("i am player "+TurnManager.thisPlayer+"currently playing is player"+currentPlayer);
-            if (TurnManager.thisPlayer != currentPlayer && SceneManager.GetActiveScene().name == "gameScene")
-                button.SetActive(false);
+            
 
 
             if ( turnManager != null)
