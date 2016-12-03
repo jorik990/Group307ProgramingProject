@@ -105,7 +105,7 @@ public class UnityClient : MonoBehaviour {
             SceneManager.LoadScene("Lobby");
 
         if (client != null && gameStarted == "1" && SceneManager.GetActiveScene().name == "Lobby")
-         SceneManager.LoadScene("gameScene");
+         SceneManager.LoadScene("Working Game Scene");
 
 
         /*
