@@ -82,7 +82,7 @@ public class UnityClient : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (button != null && SceneManager.GetActiveScene().name == "gameScene")
+        if (button == null && SceneManager.GetActiveScene().name == "gameScene")
             button = GameObject.Find("Roll");
 
         if (keeptrack == null && SceneManager.GetActiveScene().name == "gameScene")
