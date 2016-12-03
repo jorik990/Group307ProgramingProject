@@ -78,8 +78,7 @@ public class UnityClient : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
-            turnManager.newTurn();
+     
 
         timepassed += Time.deltaTime;
         if(timepassed >= 1)
@@ -91,8 +90,9 @@ public class UnityClient : MonoBehaviour {
             {
                 UpdateSharedInfo();
                 Debug.Log("updating");
-                
-               
+                if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
+                    turnManager.newTurn();
+
             }
             timepassed = 0;
         }
