@@ -81,8 +81,12 @@ public class TurnManager : MonoBehaviour {
         clickObject.Selectable = false;
         clickObject.excludeInactivePawn = false;
         button.SetActive(true);
+
         if (Dice.diceroll != 6)
             endTurn();
+        else
+            resetTurn();
+
 
     }
 
@@ -95,6 +99,19 @@ public class TurnManager : MonoBehaviour {
         keeptrack.UpdateAllPawns();
 
     }
+    public void resetTurn()
+    {
+        Dice.diceroll = 0;
+        
+
+
+        
+        action.text = "player " + UnityClient.currentPlayer + " turn";
+        Debug.Log("New players Turn");
+        multiplayerInfo.resetTurn();
+       
+    }
+
     public void endTurn()
     {
         Dice.diceroll = 0;

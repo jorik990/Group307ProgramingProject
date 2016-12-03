@@ -98,6 +98,9 @@ public class UnityClient : MonoBehaviour {
                 if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
                     turnManager.newTurn();
 
+                if (keeptrack != null)
+                    keeptrack.UpdateAllPawns();
+
             }
             timepassed = 0;
         }
@@ -209,6 +212,50 @@ public class UnityClient : MonoBehaviour {
         }
 
         server.updateData(sharedDataString);
+    }
+
+    public void resetTurn()
+    {
+        UpdateSharedInfo();
+        
+
+        shardData[2] = keeptrack.getPawnPos(1, 0) + "";
+        shardData[3] = keeptrack.getPawnPos(1, 1) + "";
+        shardData[4] = keeptrack.getPawnPos(1, 2) + "";
+        shardData[5] = keeptrack.getPawnPos(1, 3) + "";
+        shardData[6] = keeptrack.getPawnPos(2, 0) + "";
+        shardData[7] = keeptrack.getPawnPos(2, 1) + "";
+        shardData[8] = keeptrack.getPawnPos(2, 2) + "";
+        shardData[9] = keeptrack.getPawnPos(2, 3) + "";
+        shardData[10] = keeptrack.getPawnPos(3, 0) + "";
+        shardData[11] = keeptrack.getPawnPos(3, 1) + "";
+        shardData[12] = keeptrack.getPawnPos(3, 2) + "";
+        shardData[13] = keeptrack.getPawnPos(3, 3) + "";
+        shardData[14] = keeptrack.getPawnPos(4, 0) + "";
+        shardData[15] = keeptrack.getPawnPos(4, 1) + "";
+        shardData[16] = keeptrack.getPawnPos(4, 2) + "";
+        shardData[17] = keeptrack.getPawnPos(4, 3) + "";
+
+        sharedDataString = "";
+        for (int i = 0; i < shardData.Length; i++)
+        {
+            if (i == shardData.Length - 1)
+                sharedDataString += shardData[i];
+            else
+                sharedDataString += shardData[i] + ",";
+        }
+
+        if (isHost)
+        {
+            server.updateData(sharedDataString);
+        }
+        else
+        {
+            client.updateData(sharedDataString);
+        }
+
+
+
     }
 
     public void nextPlayerAndUpdate()
