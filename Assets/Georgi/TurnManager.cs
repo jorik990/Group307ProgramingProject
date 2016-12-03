@@ -132,8 +132,10 @@ public class TurnManager : MonoBehaviour {
         keeptrack.ReleasePawn();
         if (temp == false)
             endTurn();
-        else
+        else {
             action.text = "Pawn Released, Roll Again";
+            resetTurn();
+        }
 
     }
 
