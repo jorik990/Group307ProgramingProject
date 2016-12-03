@@ -13,7 +13,7 @@ public class Client  {
     public string dataGottenFromServer = "";
     string ipAdress;
     bool sendData = false;
-    string dataToSend = "";
+    string dataToSend = "0";
     public string recivedData;
 
     public Client(string ipAdress)
@@ -42,8 +42,12 @@ public class Client  {
         {
 
             writer.WriteLine(dataToSend);
+
+
             dataGottenFromServer = reader.ReadLine();
-            dataToSend = dataGottenFromServer;
+
+            if (dataGottenFromServer == dataToSend)
+                dataToSend = "0";
 
 
 
@@ -53,7 +57,7 @@ public class Client  {
 
     public void updateData(string data)
     {
-        dataGottenFromServer = data;
+      
         dataToSend = data;
     }
 }

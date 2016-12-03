@@ -147,6 +147,7 @@ public class UnityClient : MonoBehaviour {
     {
         getDataFromServerOrClient();
 
+        Debug.Log(sharedDataString);
 
         shardData = sharedDataString.Split(","[0]);
     
@@ -180,7 +181,7 @@ public class UnityClient : MonoBehaviour {
     {
         if (isHost)
         {
-           sharedDataString = server.dataToSend;
+           sharedDataString = server.storedData;
         }
         else 
         {
@@ -225,7 +226,7 @@ public class UnityClient : MonoBehaviour {
         {
             client.updateData(sharedDataString);
         }
-        UpdateSharedInfo();
+        
         
         
     }

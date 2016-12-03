@@ -72,32 +72,19 @@ public class Server  {
         dataToSend = storedData;
 
 
+        string readData = "0";
+
         while (true)
         {
-            storedData = reader.ReadLine();
-            if (storedData != dataToSend && storedData != "")
-                dataToSend = storedData;
+            readData = reader.ReadLine();
+            if (readData != "0")
+                storedData = readData;
+
+            dataToSend = storedData;
+
             writer.WriteLine(dataToSend);
 
-           
-
-
-
-            /*
-            if (writeToclients)
-            
-                writer.WriteLine(dataToSend);
-            else
-            {
-                storedData = reader.ReadLine();
-                dataToSend = storedData;
-                writer.WriteLine(dataToSend);
-            }
-            
-    */
-
-
-
+          
         }
     }
 
