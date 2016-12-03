@@ -4,7 +4,7 @@ using System.Collections;
 public class pawn : MonoBehaviour {
 
     public int number;
-
+    public bool isHome = false;
     public bool isPawnActive = false;
     int position = 70;
     public int Position

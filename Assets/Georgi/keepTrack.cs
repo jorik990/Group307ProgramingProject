@@ -120,7 +120,7 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < greenPlayersPawns.Length; i++)
             {
-                if (greenPlayersPawns[i].GetComponent<pawn>().isPawnActive == false)
+                if (greenPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     greenPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     greenPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[0, 0], (float)BoardCoordinants[0, 1], 0));
@@ -134,7 +134,7 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < redPlayersPawns.Length; i++)
             {
-                if (redPlayersPawns[i].GetComponent<pawn>().isPawnActive == false)
+                if (redPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     redPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     redPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[10, 0], (float)BoardCoordinants[10, 1], 0));
@@ -148,7 +148,7 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < bluePlayersPawns.Length; i++)
             {
-                if (bluePlayersPawns[i].GetComponent<pawn>().isPawnActive == false)
+                if (bluePlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     bluePlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     bluePlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[20, 0], (float)BoardCoordinants[20, 1], 0));
@@ -162,7 +162,7 @@ public class keepTrack : MonoBehaviour
         {
             for (int i = 0; i < yellowPlayersPawns.Length; i++)
             {
-                if (yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive == false)
+                if (yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive == false && !greenPlayersPawns[i].GetComponent<pawn>().isHome)
                 {
                     yellowPlayersPawns[i].GetComponent<pawn>().setRealPos(0);
                     yellowPlayersPawns[i].transform.position = (new Vector3((float)BoardCoordinants[30, 0], (float)BoardCoordinants[30, 1], 0));
@@ -264,9 +264,56 @@ public class keepTrack : MonoBehaviour
                 pawn.transform.position = new Vector3((float)bluePath[(pawn.GetComponent<pawn>().getRealPos() - 40) % 5, 0], (float)bluePath[(pawn.GetComponent<pawn>().getRealPos() - 40) % 5, 1], 0);
             else if (TurnManager.thisPlayer == 4)
                 pawn.transform.position = new Vector3((float)yellowPath[(pawn.GetComponent<pawn>().getRealPos() - 40) % 5, 0], (float)yellowPath[(pawn.GetComponent<pawn>().getRealPos() - 40) % 5, 1], 0);
+
+            if ((pawn.GetComponent<pawn>().getRealPos() - 40) % 5 == 5)
+            {
+                pawn.GetComponent<pawn>().isHome = true;
+                pawn.GetComponent<pawn>().isHome = false;
+
+            }
         }
-        else
+        else {
+            for (int i = 0; i < greenPlayersPawns.Length; i++)
+            {
+                if (pawn.GetComponent<pawn>().Position == greenPlayersPawns[i].GetComponent<pawn>().Position)
+                {
+                    greenPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
+                    greenPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
+                }
+
+            }
+            for (int i = 0; i < redPlayersPawns.Length; i++)
+            {
+                if (pawn.GetComponent<pawn>().Position == redPlayersPawns[i].GetComponent<pawn>().Position)
+                {
+                    redPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
+                    redPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
+                }
+
+            }
+            for (int i = 0; i < bluePlayersPawns.Length; i++)
+            {
+                if (pawn.GetComponent<pawn>().Position == bluePlayersPawns[i].GetComponent<pawn>().Position)
+                {
+                    bluePlayersPawns[i].GetComponent<pawn>().setRealPos(70);
+                    bluePlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
+                }
+
+            }
+            for (int i = 0; i < yellowPlayersPawns.Length; i++)
+            {
+                if (pawn.GetComponent<pawn>().Position == yellowPlayersPawns[i].GetComponent<pawn>().Position)
+                {
+                    yellowPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
+                    yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
+                }
+
+            }
+
+
             pawn.transform.position = new Vector3((float)BoardCoordinants[(pawn.GetComponent<pawn>().Position) % 40, 0], (float)BoardCoordinants[(pawn.GetComponent<pawn>().Position) % 40, 1], 0);
+
+        }
     }
     public void playerWins()
     {
