@@ -227,7 +227,7 @@ public class keepTrack : MonoBehaviour {
         
 
         pawn.GetComponent<pawn>().addToPos(move);
-        Debug.Log(pawn.GetComponent<pawn>().Position % 40);
+        //Debug.Log(pawn.GetComponent<pawn>().Position % 40);
 
         pawn.transform.position = new Vector3((float)BoardCoordinants[(pawn.GetComponent<pawn>().Position)%40, 0], (float)BoardCoordinants[(pawn.GetComponent<pawn>().Position) % 40, 1], 0);
     }

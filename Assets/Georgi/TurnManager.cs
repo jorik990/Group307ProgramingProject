@@ -165,10 +165,18 @@ public class TurnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (turnInProgress && !waitingToSelectPawn)
+        if (thisPlayer == UnityClient.currentPlayer && !waitingToSelectPawn)
+        {
+
+
             button.SetActive(true);
-        if (!turnInProgress)
+            Debug.Log("made button visible");
+        }
+        if (thisPlayer != UnityClient.currentPlayer)
+        {
             button.SetActive(false);
+            Debug.Log("made button visible");
+        }
 
         if (waitingToSelectPawn && selectedPawn !=null)
         {

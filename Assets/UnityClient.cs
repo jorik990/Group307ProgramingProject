@@ -97,9 +97,10 @@ public class UnityClient : MonoBehaviour {
             if ( turnManager != null)
             {
                 UpdateSharedInfo();
-             //   Debug.Log("updating");
-                if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
-                    turnManager.newTurn();
+            //   Debug.Log("updating");
+
+            //if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
+             //       turnManager.newTurn();
                 
                 if (keeptrack != null)
                     keeptrack.UpdateAllPawns();
