@@ -3,6 +3,8 @@ using System.Collections;
 
 public class pawn : MonoBehaviour {
 
+    public int number;
+
     public bool isPawnActive = false;
     int position = 0;
     public int Position
@@ -27,6 +29,15 @@ public class pawn : MonoBehaviour {
     public void addToPos(int increment)
     {
         position += increment;
+    }
+
+    public int getRealPos()
+    {
+        return position;
+    }
+    public void setRealPos(int newpos)
+    {
+        position = newpos;
     }
 
     // Use this for initialization

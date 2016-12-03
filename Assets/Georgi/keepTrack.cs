@@ -160,10 +160,59 @@ public class keepTrack : MonoBehaviour {
 
     }
 
+    public int getPawnPos(int player,int number)
+    {
+        int posOfPawn=0;
+        if(player ==1)
+        {
+          posOfPawn =  greenPlayersPawns[number].GetComponent<pawn>().getRealPos();
+        }
+        if (player == 2)
+        {
+            posOfPawn = redPlayersPawns[number].GetComponent<pawn>().getRealPos();
+        }
+        if (player == 3)
+        {
+            posOfPawn = bluePlayersPawns[number].GetComponent<pawn>().getRealPos();
+        }
+        if (player == 4)
+        {
+            posOfPawn = yellowPlayersPawns[number].GetComponent<pawn>().getRealPos();
+        }
+        return posOfPawn;
+    }
+
+
+    public void UpdateAllPawns()
+    {
+        for (int i = 0; i < greenPlayersPawns.Length; i++)
+        {
+            greenPlayersPawns[i].GetComponent<pawn>().setRealPos(UnityClient.player1PawnPos[i]);
+            greenPlayersPawns[i].transform.position = new Vector3((float)BoardCoordinants[(greenPlayersPawns[i].GetComponent<pawn>().Position) % 40, 0], (float)BoardCoordinants[(greenPlayersPawns[i].GetComponent<pawn>().Position) % 40, 1], 0);
+        }
+        for (int i = 0; i < bluePlayersPawns.Length; i++)
+        {
+            bluePlayersPawns[i].GetComponent<pawn>().setRealPos(UnityClient.player3PawnPos[i]);
+            bluePlayersPawns[i].transform.position = new Vector3((float)BoardCoordinants[(bluePlayersPawns[i].GetComponent<pawn>().Position) % 40, 0], (float)BoardCoordinants[(bluePlayersPawns[i].GetComponent<pawn>().Position) % 40, 1], 0);
+        }
+        for (int i = 0; i < redPlayersPawns.Length; i++)
+        {
+            redPlayersPawns[i].GetComponent<pawn>().setRealPos(UnityClient.player2PawnPos[i]);
+            redPlayersPawns[i].transform.position = new Vector3((float)BoardCoordinants[(redPlayersPawns[i].GetComponent<pawn>().Position) % 40, 0], (float)BoardCoordinants[(redPlayersPawns[i].GetComponent<pawn>().Position) % 40, 1], 0);
+        }
+        for (int i = 0; i < yellowPlayersPawns.Length; i++)
+        {
+            yellowPlayersPawns[i].GetComponent<pawn>().setRealPos(UnityClient.player4PawnPos[i]);
+            yellowPlayersPawns[i].transform.position = new Vector3((float)BoardCoordinants[(yellowPlayersPawns[i].GetComponent<pawn>().Position) % 40, 0], (float)BoardCoordinants[(yellowPlayersPawns[i].GetComponent<pawn>().Position) % 40, 1], 0);
+        }
+
+    }
+
 
     public void MovePawn(GameObject pawn, int move)
     {
 
+        
 
         pawn.GetComponent<pawn>().addToPos(move);
         Debug.Log(pawn.GetComponent<pawn>().Position % 40);

@@ -12,6 +12,8 @@ using UnityEngine.SceneManagement;
 public class UnityClient : MonoBehaviour {
     Server server;
     Client client;
+    keepTrack keeptrack;
+
     string[] shardData = new string[18];
     public string sharedDataString;
     public static int numberOfPlayers;
@@ -78,7 +80,10 @@ public class UnityClient : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-     
+
+        if (keeptrack == null && SceneManager.GetActiveScene().name == "gameScene")
+            keeptrack = FindObjectOfType<keepTrack>();
+
 
         timepassed += Time.deltaTime;
         if(timepassed >= 1)
@@ -217,6 +222,23 @@ public class UnityClient : MonoBehaviour {
         Debug.Log("there is " + numberOfPlayers + " in the game so the turn is set to" + temp);
 
         shardData[1] = temp + "";
+
+        shardData[2]  = keeptrack.getPawnPos(1, 0) + "";
+        shardData[3]  = keeptrack.getPawnPos(1, 1) + "";
+        shardData[4]  = keeptrack.getPawnPos(1, 2) + "";
+        shardData[5]  = keeptrack.getPawnPos(1, 3) + "";
+        shardData[6]  = keeptrack.getPawnPos(2, 0) + "";
+        shardData[7]  = keeptrack.getPawnPos(2, 1) + "";
+        shardData[8]  = keeptrack.getPawnPos(2, 2) + "";
+        shardData[9]  = keeptrack.getPawnPos(2, 3) + "";
+        shardData[10] = keeptrack.getPawnPos(3, 0) + "";
+        shardData[11] = keeptrack.getPawnPos(3, 1) + "";
+        shardData[12] = keeptrack.getPawnPos(3, 2) + "";
+        shardData[13] = keeptrack.getPawnPos(3, 3) + "";
+        shardData[14] = keeptrack.getPawnPos(4, 0) + "";
+        shardData[15] = keeptrack.getPawnPos(4, 1) + "";
+        shardData[16] = keeptrack.getPawnPos(4, 2) + "";
+        shardData[17] = keeptrack.getPawnPos(4, 3) + "";
 
         sharedDataString = "";
         for (int i = 0; i < shardData.Length; i++)
