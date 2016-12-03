@@ -82,7 +82,7 @@ public class UnityClient : MonoBehaviour {
         timepassed += Time.deltaTime;
         if(timepassed >= 1)
         {
-            Debug.Log(currentPlayer);
+            Debug.Log("i am player "+TurnManager.thisPlayer);
             
 
             if ( turnManager != null)
@@ -208,7 +208,12 @@ public class UnityClient : MonoBehaviour {
     public void nextPlayerAndUpdate()
     {
         UpdateSharedInfo();
-        shardData[1] = (currentPlayer + 1 % numberOfPlayers) + "";
+        int temp = currentPlayer;
+        temp++;
+        if (temp > numberOfPlayers)
+            temp = 1;
+            
+       
         sharedDataString = "";
         for (int i = 0; i < shardData.Length; i++)
         {

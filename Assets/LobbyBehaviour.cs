@@ -45,7 +45,7 @@ public class LobbyBehaviour : MonoBehaviour {
 
         if (passedTime > 1)
         {
-            Debug.Log("you are player " + TurnManager.thisPlayer);
+
             updatePlayers();
             passedTime = 0;
         } 
@@ -66,8 +66,7 @@ public class LobbyBehaviour : MonoBehaviour {
         int numberOfPlayers = 0;
         multiplayerInfo.UpdateSharedInfo();
         numberOfPlayers = UnityClient.numberOfPlayers;
-        Debug.Log(numberOfPlayers);
-        Debug.Log(multiplayerInfo.sharedDataString);
+
 
         if (UnityClient.gameStarted == "1" && SceneManager.GetActiveScene().name == "Lobby")
         {
