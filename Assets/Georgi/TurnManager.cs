@@ -136,6 +136,8 @@ public class TurnManager : MonoBehaviour {
         Debug.Log((UnityClient.currentPlayer+1 % UnityClient.numberOfPlayers));
 
         multiplayerInfo = (UnityClient)GameObject.FindObjectOfType<UnityClient>();
+        button.SetActive(false);
+        /*
         if (thisPlayer != UnityClient.currentPlayer)
         {
             button.SetActive(false);
@@ -147,7 +149,7 @@ public class TurnManager : MonoBehaviour {
         {
             newTurn();
         }
-
+        */
 
     }
 
