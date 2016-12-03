@@ -275,7 +275,7 @@ public class keepTrack : MonoBehaviour
         else {
             for (int i = 0; i < greenPlayersPawns.Length; i++)
             {
-                if (pawn.GetComponent<pawn>().Position == greenPlayersPawns[i].GetComponent<pawn>().Position)
+                if (pawn.GetComponent<pawn>().Position == greenPlayersPawns[i].GetComponent<pawn>().Position && TurnManager.thisPlayer != 1)
                 {
                     greenPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
                     greenPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
@@ -284,7 +284,7 @@ public class keepTrack : MonoBehaviour
             }
             for (int i = 0; i < redPlayersPawns.Length; i++)
             {
-                if (pawn.GetComponent<pawn>().Position == redPlayersPawns[i].GetComponent<pawn>().Position)
+                if (pawn.GetComponent<pawn>().Position == redPlayersPawns[i].GetComponent<pawn>().Position && TurnManager.thisPlayer != 2)
                 {
                     redPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
                     redPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
@@ -293,7 +293,7 @@ public class keepTrack : MonoBehaviour
             }
             for (int i = 0; i < bluePlayersPawns.Length; i++)
             {
-                if (pawn.GetComponent<pawn>().Position == bluePlayersPawns[i].GetComponent<pawn>().Position)
+                if (pawn.GetComponent<pawn>().Position == bluePlayersPawns[i].GetComponent<pawn>().Position && TurnManager.thisPlayer != 3)
                 {
                     bluePlayersPawns[i].GetComponent<pawn>().setRealPos(70);
                     bluePlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
@@ -302,7 +302,7 @@ public class keepTrack : MonoBehaviour
             }
             for (int i = 0; i < yellowPlayersPawns.Length; i++)
             {
-                if (pawn.GetComponent<pawn>().Position == yellowPlayersPawns[i].GetComponent<pawn>().Position)
+                if (pawn.GetComponent<pawn>().Position == yellowPlayersPawns[i].GetComponent<pawn>().Position && TurnManager.thisPlayer != 4)
                 {
                     yellowPlayersPawns[i].GetComponent<pawn>().setRealPos(70);
                     yellowPlayersPawns[i].GetComponent<pawn>().isPawnActive = false;
