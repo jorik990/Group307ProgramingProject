@@ -88,18 +88,16 @@ public class UnityClient : MonoBehaviour {
         timepassed += Time.deltaTime;
         if(timepassed >= 1)
         {
-            Debug.Log("i am player "+TurnManager.thisPlayer);
+            Debug.Log("i am player "+TurnManager.thisPlayer+"currently playing is player"+currentPlayer);
             
 
             if ( turnManager != null)
             {
                 UpdateSharedInfo();
-                Debug.Log("updating");
+             //   Debug.Log("updating");
                 if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
                     turnManager.newTurn();
-                 if(turnManager != null && currentPlayer != TurnManager.thisPlayer)
-                    turnManager.endTurn();
-
+                
                 if (keeptrack != null)
                     keeptrack.UpdateAllPawns();
 
@@ -158,7 +156,7 @@ public class UnityClient : MonoBehaviour {
     {
         getDataFromServerOrClient();
 
-        Debug.Log(sharedDataString);
+        //Debug.Log(sharedDataString);
 
         shardData = sharedDataString.Split(","[0]);
     

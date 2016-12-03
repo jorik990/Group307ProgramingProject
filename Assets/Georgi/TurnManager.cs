@@ -26,7 +26,7 @@ public class TurnManager : MonoBehaviour {
     public  void DiceRolled()
     {
 
-        Debug.Log("you rolled "+Dice.diceroll);
+        //Debug.Log("you rolled "+Dice.diceroll);
         diceRolls++;
         
        
@@ -158,19 +158,7 @@ public class TurnManager : MonoBehaviour {
 
         multiplayerInfo = (UnityClient)GameObject.FindObjectOfType<UnityClient>();
         button.SetActive(false);
-        /*
-        if (thisPlayer != UnityClient.currentPlayer)
-        {
-            button.SetActive(false);
-
-            //this need to say the color of the player instead
-            action.text = "Current Player " + UnityClient.currentPlayer;
-        }
-        else
-        {
-            newTurn();
-        }
-        */
+       
 
     }
 
