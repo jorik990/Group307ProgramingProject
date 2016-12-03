@@ -170,12 +170,12 @@ public class TurnManager : MonoBehaviour {
 
 
             button.SetActive(true);
-            Debug.Log("made button visible");
+            //Debug.Log("made button visible");
         }
         if (thisPlayer != UnityClient.currentPlayer)
         {
             button.SetActive(false);
-            Debug.Log("made button visible");
+           // Debug.Log("made button visible");
         }
 
         if (waitingToSelectPawn && selectedPawn !=null)
