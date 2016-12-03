@@ -89,9 +89,8 @@ public class UnityClient : MonoBehaviour {
 
 
         timepassed += Time.deltaTime;
-        if(timepassed >= 1)
-        {
-            Debug.Log("i am player "+TurnManager.thisPlayer+"currently playing is player"+currentPlayer);
+        
+           // Debug.Log("i am player "+TurnManager.thisPlayer+"currently playing is player"+currentPlayer);
             
 
 
@@ -106,8 +105,7 @@ public class UnityClient : MonoBehaviour {
                     keeptrack.UpdateAllPawns();
 
             }
-            timepassed = 0;
-        }
+       
 
 
         if(SceneManager.GetActiveScene().name == "gameScene" && turnManager == null)
