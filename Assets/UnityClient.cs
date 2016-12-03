@@ -97,6 +97,8 @@ public class UnityClient : MonoBehaviour {
                 Debug.Log("updating");
                 if (turnManager != null && currentPlayer == TurnManager.thisPlayer && TurnManager.turnInProgress == false)
                     turnManager.newTurn();
+                 if(turnManager != null && currentPlayer != TurnManager.thisPlayer)
+                    turnManager.endTurn();
 
                 if (keeptrack != null)
                     keeptrack.UpdateAllPawns();

@@ -151,6 +151,8 @@ public class TurnManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        turnInProgress = false;
         Debug.Log("current player"+UnityClient.currentPlayer+" number of players "+UnityClient.numberOfPlayers);
         Debug.Log((UnityClient.currentPlayer+1 % UnityClient.numberOfPlayers));
 
@@ -176,8 +178,7 @@ public class TurnManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (UnityClient.currentPlayer != thisPlayer)
-            endTurn();
+        
         
 
         if (waitingToSelectPawn && selectedPawn !=null)
