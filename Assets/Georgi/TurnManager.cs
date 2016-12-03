@@ -125,6 +125,7 @@ public class TurnManager : MonoBehaviour {
 
     void releasePawn()
     {
+        waitingToSelectPawn = false;
         selectedPawn = null;
         bool temp = keeptrack.IsThereAnActivePawn();
         keeptrack.ReleasePawn();
