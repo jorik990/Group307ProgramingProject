@@ -176,7 +176,8 @@ public class TurnManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (UnityClient.currentPlayer != thisPlayer)
+            endTurn();
         
 
         if (waitingToSelectPawn && selectedPawn !=null)
